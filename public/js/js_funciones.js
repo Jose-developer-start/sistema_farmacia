@@ -7,15 +7,23 @@ function myFunction(){
 		x.style.display = "none";
 	}
 }
-function readURL(input){
+function readURL(input,id){
 	if(input.files && input.files[0]){
 		var reader = new FileReader();
 		reader.onload = (event)=>{
-			$('#imagenmuestra').attr('src',event.target.result);
+			$(id).attr('src',event.target.result);
 		}
 		reader.readAsDataURL(input.files[0]);
 	}
 }
 $('#imagen').change(function(){
-	readURL(this);
+	readURL(this,'#imagenmuestra');
+})
+//Show logo
+$('#imagen_logo').change(function(){
+	readURL(this,'#show_logo');
+})
+//Show banner login
+$('#imagen_banner').change(function(){
+	readURL(this,'#show_banner');
 })

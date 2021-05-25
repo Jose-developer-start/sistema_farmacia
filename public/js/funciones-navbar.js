@@ -16,4 +16,8 @@ $(document).ready(function() {
         $("#capa").load("ventas/principal.php");
         event.preventDefault();
     });
+    $("a.config-GUI").click(function(event) {
+        $("#capa").load("configuracion/principal.php");
+        event.preventDefault();
+    });
 });
