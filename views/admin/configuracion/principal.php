@@ -2,7 +2,7 @@
 <script src="../../public/js/config-img.js"></script>
 <div class="row">
     <div class="col-12 col-md-6">
-        <h2 class="text-center my-3">Configurar banner de inicio</h2>
+        <h2 class="text-center my-3">Configurar banner de Login</h2>
         <form action="" id="add-banner" enctype="multipart/form-data">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
