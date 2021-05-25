@@ -20,7 +20,7 @@
 		<script src="https://kit.fontawesome.com/05f4903dc9.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="bodylogin">
-		<div class="container-fluid">
+		<div class="container-fluid content__login__color">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="d-none d-sm-none d-md-block">
@@ -30,7 +30,7 @@
 									<h3><b>Bienvenidos/as</b></h3>
 								</div>
 								<div style="text-align: center;white-space: normal;margin: 10px auto;">
-									<img src="./public/img/logos/logo.png" width="150px" alt="Logo">
+									<img src="./public/img/logos/logo.png" width="200px" alt="Logo">
 								</div>
 							</div>
 						</div>
