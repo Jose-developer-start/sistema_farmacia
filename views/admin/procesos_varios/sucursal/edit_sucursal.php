@@ -16,7 +16,7 @@ $data = SelectData($query,'i');
 ?>
 <?php foreach($data AS $result): ?>
 <form id="update-sucursal">
-    <h3 style="text-align: center;">Registro de Proveedores</h3>
+    <h3 style="text-align: center;">Editar sucursal</h3>
     <hr>
     <div class="row">
         <div class="col-sm-12 col-md-6">

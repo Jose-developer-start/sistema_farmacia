@@ -3,7 +3,7 @@
 <script src="../../public/js/js_funciones.js"></script>
 
 <form id="add-sucursal">
-    <h3 style="text-align: center;">Registro de Proveedores</h3>
+    <h3 style="text-align: center;">Registro de Sucursal</h3>
     <hr>
     <div class="row">
         <div class="col-sm-12 col-md-6">

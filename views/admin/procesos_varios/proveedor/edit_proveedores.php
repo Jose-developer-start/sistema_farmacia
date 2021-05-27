@@ -16,7 +16,7 @@ $data = SelectData($query,'i');
 ?>
 <?php foreach($data AS $result): ?>
 <form id="update-proveedores" enctype="multipart/form-data">
-    <h3 style="text-align: center;">Registro de Proveedores</h3>
+    <h3 style="text-align: center;">Editar Proveedor</h3>
     <hr>
     <div class="row">
         <div class="col-sm-12 col-md-6">
