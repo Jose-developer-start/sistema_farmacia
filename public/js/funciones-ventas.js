@@ -27,8 +27,8 @@ $(document).ready(function(){
 		var id_sucursal = $("#id_sucursal option:selected").val();
 		var fecha_v = $("#fecha_v").val();
 		var descuento = $("#descuento").val()
-		if(dui == ""){
-			alertify.alert("Registro venta","El DUI esta vacio...");
+		if(dui == "" || dui.length < 9){
+			alertify.alert("Registro venta","El DUI debe tener 9 números...");
 		}else if(nombre == ""){
 			alertify.alert("Registro venta","Nombre esta vacio");
 		}
