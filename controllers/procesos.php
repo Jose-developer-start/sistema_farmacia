@@ -6,6 +6,7 @@
         {
             foreach($data as $result){
                 $hash = $result['passw'];
+                $id = $result['id_usuario'];
                 $tipo = $result['tipo'];
                 $estado = $result['estado'];
             }
@@ -13,10 +14,12 @@
                 if(password_verify($passw,$hash)){
                     if($tipo == 1){ //Vista administrador
                         $_SESSION['usuario'] = $user;
+                        $_SESSION['id_usuario'] = $id;
                         $_SESSION['tipo'] = $tipo;
                         header("Location:../views/admin/index.php");
                     }else{ //Vista de la tienda
                         $_SESSION['usuario'] = $user;
+                        $_SESSION['id_usuario'] = $id;
                         $_SESSION['tipo'] = $tipo;
                         header("Location:../views/store/index.php");
                     }
