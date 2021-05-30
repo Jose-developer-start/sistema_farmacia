@@ -1,5 +1,5 @@
 
-<div class="card" style="background-color: #212121;color: #ff7043;">
+<div class="card" style="background-color: #203338;color: #ff7043;">
     <h5 class="card-header">
     <i class="fas fa-store-alt"> </i> Sistema Gestión Farmacia(SGMB)
     </h5>
@@ -11,13 +11,13 @@
                 <i class="fas fa-user"></i> Bienvenido/a: <?php echo  $_SESSION["usuario"];?>
                 <div style="text-align: center;">
                     M.B <br>
-                    <img src="../../public/img/logos/bull.png" width="150px" alt="">
+                    <img src="../../public/img/logos/user.png" width="150px" alt="">
                 </div>
             </div>
         </div>
         <div class="col-md-8">
         <div class="card">
-        <div class="card-header" style="background-color: #212121;color: #ff7043;">
+        <div class="card-header" style="background-color: #203338;color: #ff7043;">
             <b>Panel Principal</b>
         </div>
         <div class="card-body">
