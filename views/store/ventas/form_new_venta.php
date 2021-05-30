@@ -20,7 +20,7 @@ $DataSucursal = SelectData($query);
             <legend>Información del cliente*</legend>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">DUI</span>
+                    <span class="input-group-text" id="basic-addon1">DUI(Sin guión)</span>
                 </div>
                 <input type="number" id="dui" name="dui" class="form-control" max="9" pattern="[0-9]" required="on" />
             </div>

@@ -27,6 +27,15 @@ $cont = 0;
         color: #ff7043;
         font-weight: bold;
     }
+    .thead-cart th,.total{
+        text-align: center;
+        background-color: #28a745;
+        color: #f1f1f1;
+        font-weight: bold;
+    }
+    .payment{
+        font-size: 22px;
+    }
 
     td {
         text-align: center;
@@ -50,8 +59,8 @@ $cont = 0;
                     <?php if (isset($_SESSION['CARRITO'])) : ?>
                         <?php if (count($_SESSION['CARRITO']) > 0) : ?>
                             <h3 class="text-center my-3">Productos a vender</h3>
-                            <table class="table table-hover table-responsive-xl">
-                                <thead>
+                            <table class="table table-hover table-responsive-sm table-responsive-xl">
+                                <thead class="thead-cart">
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Descripcion</th>
@@ -70,8 +79,8 @@ $cont = 0;
                                             <?php $total += $result['PRECIO_V'] ?>
                                         </tr>
                                     <?php endforeach; ?>
-                                    <th colspan="3">Total</th>
-                                    <td colspan="2">$ <?php echo $total ?></td>
+                                    <th class="total" colspan="3">Total</th>
+                                    <td class="payment" colspan="2">$ <?php echo $total ?></td>
                                 </tbody>
                             </table>
                         <?php else : ?>
