@@ -16,8 +16,8 @@ if (isset($_GET['option'])) {
         $nombres = $_GET['nombres'];
         $apellidos = $_GET['apellidos'];
         $tabla = "clientes";
-        $campo = "id_cliente,nombres,apellidos,edad";
-        $valores = "'$dui','$nombres','$apellidos',NULL";
+        $campo = "id_cliente,nombres,apellidos";
+        $valores = "'$dui','$nombres','$apellidos'";
         $descuento = isset($_GET['descuento']) ? $_GET['descuento'] : '';
         $query = "INSERT INTO $tabla ($campo) VALUES($valores)";
         $insert = U_I_D($query);
