@@ -57,13 +57,15 @@ $paginas = ceil($num_registro / $registros);
 
 
 ?>
-    <?php include "select_y_buscador.php" ?>
+<?php include "select_y_buscador.php" ?>
+
 <?php if ($DataCategorias) : ?>
-    
-    <?php include "tabla_productos.php"?>
+
+    <?php include "tabla_productos.php" ?>
     <?php include "boton_next_back.php" ?>
 <?php else : ?>
     <div class="alert alert-danger">
         No se encuentran datos
     </div>
+
 <?php endif ?>

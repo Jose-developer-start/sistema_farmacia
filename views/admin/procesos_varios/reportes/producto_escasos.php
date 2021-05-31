@@ -15,9 +15,9 @@
     include '../../../../models/procesos.php';
     include '../../../../controllers/procesos.php';
 
-    
 
-$query = "SELECT inventarios.stock as stock,
+
+    $query = "SELECT inventarios.stock as stock,
     producto.nombre_productos as producto,
     producto.unidad_medida as unidad,
     categorias.categoria as categoria,
@@ -28,51 +28,62 @@ $query = "SELECT inventarios.stock as stock,
     INNER JOIN categorias ON inventarios.id_categoria=categorias.id_categoria
     INNER JOIN limite_productos ON limite_productos.id_producto=inventarios.id_producto WHERE limite_productos.limite >= inventarios.stock";
 
-$busca_producto = SelectData($query, "i");
+    $busca_producto = SelectData($query, "i");
 
     ?>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-    h1,h2,h3,h4,p,a,b{
-        font-family: 'Montserrat', sans-serif;
-    }
-        h1{
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        a,
+        b {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1 {
             color: lightblue;
         }
-        table{
-            text-align:center;border: 1px solid #f1f1f1;
+
+        table {
+            text-align: center;
+            border: 1px solid #f1f1f1;
         }
-        th{
+
+        th {
             padding: 8px;
             background: #e8ebf7;
         }
     </style>
     <h1>Productos Escasos</h1>
 
-  <table class="table  text-center   table-resposive-md">
- <thead class="thead-dark">
-                        <tr>
-                    <th>Producto</th>
-                            <th>Categoria</th>
-                            <th>Stock</th>
-                             <th>Medidad</th>
+    <table class="table  text-center   table-resposive-md">
+        <thead class="thead-dark">
+            <tr>
+                <th>Producto</th>
+                <th>Categoria</th>
+                <th>Stock</th>
+                <th>Medidad</th>
 
-                            <th>Límite</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                <?php foreach ($busca_producto as $result) : ?>
-                         <tr>
-                                <td><?php echo $result['producto'] ?></td>
-                                <td><?php echo $result['categoria'] ?></td>
-                                 <td><?php echo $result['stock'] ?> </td>
-                                <td><?php echo $result['unidad'] ?></td>   
-                              <td><?php echo $result['limite'] ?></td>
+                <th>Límite</th>
             </tr>
-        <?php endforeach ?>
-                    </tbody>
+        </thead>
+        <tbody>
+            <?php foreach ($busca_producto as $result) : ?>
+                <tr>
+                    <td><?php echo $result['producto'] ?></td>
+                    <td><?php echo $result['categoria'] ?></td>
+                    <td><?php echo $result['stock'] ?> </td>
+                    <td><?php echo $result['unidad'] ?></td>
+                    <td><?php echo $result['limite'] ?></td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
 
-                </table>
+    </table>
 
 
 
