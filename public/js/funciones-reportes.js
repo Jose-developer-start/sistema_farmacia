@@ -52,6 +52,23 @@ $(document).ready(function() {
             $("#contenido-procesos").html(res);
         })
     })
+    /**funcion para obtener registros de busquedas*/
+    $("#busquedafecha").on('submit', function(event) {
+        event.preventDefault();
+        var formData = new FormData(document.getElementById('busquedafecha'));
+        formData.append("dato", "valor");
+        $.ajax({
+            url: "procesos_varios/reportes/reportes_fechas.php",
+            type: "post",
+            dataType: "html",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        }).done(function(res) {
+            $("#contenido-procesos").html(res);
+        })
+    })
     //Editar productos
     $("a.edit_producto").click(function(event) {
         var idProducto = $(this).attr("id-producto");
