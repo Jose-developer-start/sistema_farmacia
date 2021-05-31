@@ -13,8 +13,6 @@ $cont = 0;
             var el = document.getElementById(id);
             el.style.display = (el.style.display == 'block') ? 'none' : 'block';
         }
-
-
     }
     window.onload = function() {
         muestra_oculta('contenido-icon')
@@ -97,9 +95,8 @@ $cont = 0;
             </div>
             <hr>
             <h3 class="text-center">Productos</h3>
-            <?php include "proceso_paginado.php" ?>
-
             <?php include "select_y_buscador.php" ?>
+            <?php include "proceso_paginado.php" ?>
             <?php if ($DataProducto) : ?>
                 <?php include "./tabla_productos.php" ?>
                 <?php include "boton_next_back.php"; ?>

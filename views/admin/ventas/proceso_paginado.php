@@ -23,7 +23,7 @@ $query = "SELECT * FROM producto"; //Total de registro para paginado
 
 if (isset($_GET['like'])) {
     $valor = $_GET['valor'];
-    $queryCate = "SELECT producto.id_producto as id_producto, producto.nombre_productos, producto.descripcion,producto.precio_venta,producto.imagen FROM inventarios INNER JOIN producto ON inventarios.id_producto=producto.id_producto WHERE inventarios.stock > 0 AND inventarios.estado=1 LIKE '%$valor%'";
+    $queryCate = "SELECT producto.id_producto as id_producto, producto.nombre_productos, producto.descripcion,producto.precio_venta,producto.imagen FROM inventarios INNER JOIN producto ON inventarios.id_producto=producto.id_producto WHERE inventarios.stock > 0 AND inventarios.estado=1 AND producto.nombre_productos LIKE '%$valor%'";
 } else {
     $queryCate = "SELECT producto.id_producto as id_producto, producto.nombre_productos, producto.descripcion,producto.precio_venta,producto.imagen FROM inventarios INNER JOIN producto ON inventarios.id_producto=producto.id_producto WHERE inventarios.stock > 0 AND inventarios.estado=1 LIMIT $inicio, $registros";
 }
