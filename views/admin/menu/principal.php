@@ -1,7 +1,7 @@
 
 <div class="card" style="background-color: #203338;color: #ff7043;">
     <h5 class="card-header">
-    <i class="fas fa-store-alt"> </i> Sistema Gestión Farmacia(SGMB)
+    <i class="fas fa-store-alt"> </i> Sistema Gestión Farmacia(SGF)
     </h5>
 </div>
 <div class="card-body" style="background-color: #757575;">
@@ -10,7 +10,7 @@
             <div class="alert alert-primary">
                 <i class="fas fa-user"></i> Bienvenido/a: <?php echo  $_SESSION["usuario"];?>
                 <div style="text-align: center;">
-                    M.B <br>
+                    <br>
                     <img src="../../public/img/logos/user.png" width="150px" alt="">
                 </div>
             </div>

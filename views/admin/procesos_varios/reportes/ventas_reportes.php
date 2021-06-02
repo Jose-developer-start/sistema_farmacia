@@ -17,11 +17,11 @@
 
 
 
-    $query = "SELECT dv.id_detalle_v,dv.precio_unitario,dv.cantidad_prod,ventas.fecha_venta,ventas.total_pago,ventas.descuento,producto.nombre_productos,sucursal.nombre_empresa, clientes.nombres FROM detalle_venta as dv 
-INNER JOIN ventas ON ventas.id_venta=dv.id_venta
-INNER JOIN producto ON producto.id_producto = dv.id_producto
-INNER JOIN sucursal on sucursal.id_empresa = dv.id_sucursal
-inner join clientes on clientes.id_cliente= ventas.id_cliente  ORDER BY id_detalle_v desc ";
+    $query = "SELECT dv.id_detalle_v,dv.precio_unitario,dv.cantidad_prod,ventas.fecha_venta,ventas.total_pago,ventas.descuento,producto.nombre_productos,sucursal.nombre_empresa, clientes.nombres,clientes.apellidos FROM detalle_venta as dv 
+    INNER JOIN ventas ON ventas.id_venta=dv.id_venta
+    INNER JOIN producto ON producto.id_producto = dv.id_producto
+    INNER JOIN sucursal on sucursal.id_empresa = dv.id_sucursal
+    inner join clientes on clientes.id_cliente= ventas.id_cliente  ORDER BY id_detalle_v desc";
     $dataVenta = SelectData($query, "i");
 
     ?>
@@ -62,21 +62,18 @@ inner join clientes on clientes.id_cliente= ventas.id_cliente  ORDER BY id_detal
                 <th>id_venta</th>
                 <th>Precio_uni.</th>
                 <th>Cantidad_produc. </th>
-                <th>Fecha_ven</th>
+                <th>Fecha_venta</th>
                 <th>Total_pago</th>
-                <th>Descuento.</th>
+                <th>Descuento</th>
                 <th>Producto</th>
                 <th>Sucursal</th>
                 <th>clientes</th>
-                <!--<th colspan="2">Procesos</th>-->
             </tr>
         </thead>
         <tbody>
+            <?php $total_ventas = 0; ?>
             <?php foreach ($dataVenta  as $result) : ?>
                 <tr>
-
-                    <!--<td><?php //echo $cont += 1; 
-                            ?></td>-->
                     <td><?php echo $result['id_detalle_v'] ?></td>
                     <td><?php echo $result['precio_unitario'] ?></td>
                     <td><?php echo $result['cantidad_prod'] ?></td>
@@ -85,21 +82,15 @@ inner join clientes on clientes.id_cliente= ventas.id_cliente  ORDER BY id_detal
                     <td><?php echo $result['descuento'] . "%" ?></td>
                     <td><?php echo $result['nombre_productos'] ?></td>
                     <td><?php echo $result['nombre_empresa'] ?></td>
-                    <td><?php echo $result['nombres'] ?></td>
-
-
-                    <!--      <td>
-                    <a href="" class="btn btn-danger del_producto" id-producto="<? php // echo $result['id_producto'] 
-                                                                                ?>">
-                        <i class="fas fa-trash-alt"></i>
-                    </a>
-                </td>-->
+                    <td><?php echo $result['nombres']." ".$result['apellidos'] ?></td>
                 </tr>
+                <?php
+                    $total_ventas +=1;
+                ?>
             <?php endforeach ?>
         </tbody>
-
     </table>
-
+    <h3>Total de productos vendidos: <?php echo $total_ventas ?></h3>
 </body>
 
 </html>

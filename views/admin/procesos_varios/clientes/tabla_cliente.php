@@ -4,7 +4,7 @@
         vertical-align: middle;
     }
 </style>
-<table class="table table-bordered table-resposive-md table-sm">
+<table class="table table-bordered table-resposive-md table-sm table-responsive-sm">
 
     <thead>
         <tr>

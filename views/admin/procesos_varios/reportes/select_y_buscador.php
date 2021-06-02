@@ -1,14 +1,14 @@
 <div class="row" style="margin-bottom: 10px">
     <div class="col-md-12">
-        <a href="procesos_varios/reportes/ventas_reportes.php" class="btn btn-success">
+        <a href="procesos_varios/reportes/ventas_reportes.php" target="_blank" class="btn btn-success">
             <i class="fas fa-plus-circle"><b> Reportes Ventas</b></i>
         </a>
 
-        <a href="procesos_varios/reportes/productos_masvendidos.php" class="btn btn-primary m-4 ">
+        <a href="procesos_varios/reportes/productos_masvendidos.php" target="_blank" class="btn btn-primary m-4 ">
             <i class="fas fa-plus-circle"><b> Productos mas vendidos</b></i>
         </a>
 
-        <a href="procesos_varios/reportes/producto_escasos.php" class="  btn btn-info ">
+        <a href="procesos_varios/reportes/producto_escasos.php" target="_blank" class="btn btn-info ">
             <i class="fas fa-plus-circle"><b> Productos Escasos</b></i>
         </a>
 

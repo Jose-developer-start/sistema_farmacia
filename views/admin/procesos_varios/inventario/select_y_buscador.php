@@ -1,6 +1,6 @@
 <div class="row" style="margin-bottom: 10px">
     <div class="col-md-6">
-        <a href="" class="btn btn-primary" id="new-stock">
+        <a href="" class="btn btn-primary" id="new-product">
             <i class="fas fa-plus-circle"><b>Producto a inventario</b></i>
         </a>
     </div>

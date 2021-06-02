@@ -12,18 +12,13 @@ INNER JOIN sucursal on sucursal.id_empresa = dv.id_sucursal
 inner join clientes on clientes.id_cliente= ventas.id_cliente  WHERE fecha_venta BETWEEN "' . $desde . '" AND "' . $hasta . '" ORDER BY id_detalle_v DESC';
 $sqlfechaconsulta = SelectData($sqlfecha, "i");
 
-
-// print_r( $sqlfechaconsulta);
-
 ?>
 <?php if ($sqlfechaconsulta) : ?>
     <script>
         $(document).ready(function() {
-
             alertify.alert("Exito", "Reporte generado");
             $("#contenido-procesos").load("procesos_varios/reportes/principal_productos.php");
-
-            window.open("procesos_varios/reportes/reportes_nueva_fechas.php?desde=<?php echo $desde; ?>&hasta=<?php echo $hasta; ?>");
+            window.open("procesos_varios/reportes/reportes_nueva_fechas.php?desde=<?php echo base64_encode($desde); ?>&hasta=<?php echo base64_encode($hasta); ?>");
         });
     </script>
 <?php else : ?>
@@ -31,7 +26,6 @@ $sqlfechaconsulta = SelectData($sqlfecha, "i");
         $(document).ready(function() {
             alertify.alert("Error", "Error verificar la fecha");
             $("#contenido-procesos").load("procesos_varios/reportes/principal_productos.php");
-
         });
     </script>
 <?php endif ?>

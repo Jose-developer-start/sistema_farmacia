@@ -14,7 +14,7 @@
 <div class="container-fluid" style="margin-top: 20px; margin-bottom:40px;">
     <div class="card" style="background-color: #212121;color: #ff7043;">
         <h5 class="card-header">
-            <i class="fas fa-store-alt"> </i> Sistema Gestión M.B.(SGMB)
+            <i class="fas fa-store-alt"> </i> Sistema Gestión Farmacia(SGF)
         </h5>
     </div>
     <div class="card-body" style="background-color: #757575;">
