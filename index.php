@@ -1,8 +1,13 @@
+<!--/**
+*
+*@Source Code
+*@Autores: Estudiantes de la Universidad Luterana Salvadoreña
+*
+*/-->
 <?php
 	session_start();
 	session_destroy();
 ?>
-<!--Despues de la practica y asignar la tarea--->
 <!DOCTYPE html>
 <html lang="es">
 	<head>
