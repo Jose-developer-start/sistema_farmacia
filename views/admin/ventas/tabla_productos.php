@@ -1,4 +1,4 @@
-<table class="table table-bordered table-resposive-md table-sm">
+<table class="table table-bordered table-resposive-md table-responsive-sm">
     <thead>
         <tr>
             <th>N°</th>

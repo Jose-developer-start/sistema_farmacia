@@ -27,7 +27,9 @@
     ?>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
+        body{
+            padding: 18px;
+        }
         h1,
         h2,
         h3,

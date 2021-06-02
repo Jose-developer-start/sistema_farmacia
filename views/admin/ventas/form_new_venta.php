@@ -22,19 +22,19 @@ $DataSucursal = SelectData($query);
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">DUI</span>
                 </div>
-                <input type="number" id="dui" name="dui" class="form-control" max="9" pattern="[0-9]" required="on" />
+                <input type="number" id="dui" name="dui" class="form-control" min="0" max="9" pattern="[0-9]" required="on" />
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
                 </div>
-                <input type="text" id="nombres" name="nombres" class="form-control" placeholder="Nombre de cliente" required="on" />
+                <input type="text" id="nombres" name="nombres" class="form-control" placeholder="Primer nombre del cliente" required="on" />
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
                 </div>
-                <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellido de cliente" required="on" />
+                <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Primer apellido del cliente" required="on" />
             </div>
         </div>
         <div class="col-md-6">
