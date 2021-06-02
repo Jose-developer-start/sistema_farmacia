@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    /*Formulario Nuevo Usuario*/
+    /*Menu de ventas*/
 	$("button.new_venta").click(function(event) 
 	{
 		$("#contenido-usuario").load("ventas/menu_venta.php");
@@ -50,8 +50,8 @@ $(document).ready(function(){
 		var id_sucursal = $("#id_sucursal option:selected").val();
 		var fecha_v = $("#fecha_v").val();
 		var descuento = $("#descuento").val()
-		if(dui == "" || dui.length < 9){
-			alertify.alert("Registro venta","El DUI debe tener 9 números...");
+		if(dui == "" || dui.length < 9 || dui.length > 9){
+			alertify.alert("Registro venta","El DUI debe tener 9 números (Sin el guión medio)");
 		}else if(nombre == ""){
 			alertify.alert("Registro venta","Nombre esta vacio");
 		}
@@ -65,6 +65,7 @@ $(document).ready(function(){
 			event.preventDefault();
 		}
 	});
+	/*Cliente frecuente*/
 	$("#cliente_venta").click(function(event){
 		var id_sucursal = $("#id_sucursal option:selected").val();
 		var id_client = $("#id_client option:selected").val();
