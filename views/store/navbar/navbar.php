@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #007c82;color:#f1f1f1;">
-  <a class="navbar-brand" href="#" style="color:#f1f1f1;">SGMB</a>
+  <a class="navbar-brand" href="#" style="color:#f1f1f1;">SGF</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

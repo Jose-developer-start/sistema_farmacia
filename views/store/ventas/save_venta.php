@@ -12,13 +12,15 @@ if (isset($_GET['option'])) {
     $dui = $_GET['dui'];
     $fecha_v = date("Y-m-d"); //Fecha
 
+    //Descuento
+    $descuento = isset($_GET['descuento']) ? $_GET['descuento'] : '';
+
     if ($_GET['option'] == 1) {
         $nombres = $_GET['nombres'];
         $apellidos = $_GET['apellidos'];
         $tabla = "clientes";
         $campo = "id_cliente,nombres,apellidos";
         $valores = "'$dui','$nombres','$apellidos'";
-        $descuento = isset($_GET['descuento']) ? $_GET['descuento'] : '';
         $query = "INSERT INTO $tabla ($campo) VALUES($valores)";
         $insert = U_I_D($query);
     }
