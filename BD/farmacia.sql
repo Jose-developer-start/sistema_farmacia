@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-05-2021 a las 19:47:12
+-- Tiempo de generación: 03-06-2021 a las 00:42:15
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -38,7 +38,10 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id_categoria`, `categoria`, `imagen_categoria`) VALUES
-(15, 'Medicina', '');
+(15, 'Medicina', ''),
+(16, 'Analgésicos', ''),
+(17, 'Antialérgicos', ''),
+(18, 'Antiinflamatorios', '');
 
 -- --------------------------------------------------------
 
@@ -51,15 +54,6 @@ CREATE TABLE `clientes` (
   `nombres` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `apellidos` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`id_cliente`, `nombres`, `apellidos`) VALUES
-(1234532, 'Carlos', 'Lozada'),
-(12344321, 'Alexis', 'Rivas'),
-(123456789, 'Jose', 'Menjivar');
 
 -- --------------------------------------------------------
 
@@ -75,23 +69,6 @@ CREATE TABLE `detalle_venta` (
   `precio_unitario` decimal(20,2) NOT NULL,
   `cantidad_prod` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `detalle_venta`
---
-
-INSERT INTO `detalle_venta` (`id_detalle_v`, `id_venta`, `id_producto`, `id_sucursal`, `precio_unitario`, `cantidad_prod`) VALUES
-(113, 56, 3, 1, '2.50', 1),
-(114, 56, 5, 1, '1.25', 1),
-(115, 57, 3, 1, '2.50', 1),
-(116, 57, 6, 1, '1.25', 1),
-(117, 57, 3, 1, '2.50', 1),
-(118, 58, 4, 1, '1.25', 1),
-(119, 59, 5, 1, '1.25', 1),
-(120, 59, 4, 1, '1.25', 1),
-(121, 59, 5, 1, '1.25', 1),
-(123, 60, 4, 1, '1.25', 1),
-(124, 61, 4, 5, '1.25', 1);
 
 -- --------------------------------------------------------
 
@@ -112,12 +89,12 @@ CREATE TABLE `inventarios` (
 --
 
 INSERT INTO `inventarios` (`id_inventario`, `id_producto`, `id_categoria`, `stock`, `estado`) VALUES
-(27, 1, 15, 0, 1),
-(28, 2, 15, 0, 1),
-(29, 3, 15, -1, 1),
-(30, 4, 15, 139, 1),
-(32, 5, 15, 42, 1),
-(33, 6, 15, 991, 1);
+(27, 1, 15, 994, 1),
+(28, 2, 15, 29, 1),
+(29, 3, 15, 998, 1),
+(30, 4, 15, 128, 1),
+(32, 5, 15, 40, 1),
+(33, 6, 15, 988, 1);
 
 -- --------------------------------------------------------
 
@@ -189,7 +166,7 @@ CREATE TABLE `proveedor` (
 
 INSERT INTO `proveedor` (`id_proveedor`, `nombre_prov`, `direccion_prov`, `telefono_prov`, `img_prov`) VALUES
 (2, 'Dripolax', 'Calle a san marcos', 22702221, 'proveedor/Dripolax Lap/Dripolax Lap.jpg'),
-(4, 'Solaris full', 'Calle a san jacinto', 77485843, 'proveedor/Solaris/Solaris.png');
+(4, 'Solaris', 'Calle a san jacinto', 77485843, 'proveedor/Solaris/Solaris.png');
 
 -- --------------------------------------------------------
 
@@ -210,11 +187,9 @@ CREATE TABLE `sucursal` (
 --
 
 INSERT INTO `sucursal` (`id_empresa`, `nombre_empresa`, `email_empresa`, `telefono_empresa`, `direccion_empresa`) VALUES
-(1, 'Driprolab', 'Driprolab@gob.salud', 4545454, 'san salvador'),
-(2, 'Hola', 'josedeodanes@gmail.com', 7585858, 'San salvador'),
-(5, 'San Vicente', 'servicio@fgfd', 898934, 'sdsdsdsd'),
-(6, 'fghfghg', 'fhfghfghfgh', 0, 'gfhfgh'),
-(7, 'fghgfh', 'gfhgfhfgh', 0, 'fghfghfgh');
+(1, 'Driprolab', 'Driprolab@gob.salud', 4545454, 'San salvador'),
+(2, 'Mi farmacia', 'josedeodanes@gmail.com', 7585858, 'San salvador'),
+(5, 'San Vicente', 'farmacia@salud.com', 898934, 'San Miguel');
 
 -- --------------------------------------------------------
 
@@ -237,8 +212,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `usuario`, `email`, `passw`, `tipo`, `estado`, `token`) VALUES
-(1, 'jose', 'josedeodanes99@gmail.com', '$2y$10$OaJiSlhoFQ7E1suwbpkgHe02vosndFcB8fBIAI0LCTZYfuDacBZ.u', 1, 1, NULL),
-(2, 'admin', 'josedeo@gma', '$2y$10$wDJkCDpKs9ucQUwNFWIcgOn5WXgXjAo3Bm6peDKctjOwNR1Yt27Hm', 2, 1, NULL);
+(1, 'admin', 'administrador@admin.com', '$2y$10$RjL8tne.ZOXQ1wZJtZMudOURMITU.HTBou/uggvOkbI6FYOVP.Pl6', 1, 1, NULL),
+(2, 'operador', 'usuario_operador@farmacia.com', '$2y$10$vtKsgQKvYru4kk7nWUMeGeLS4ldR.eQpgB9bSxeVdqObH36mOjGii', 2, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -254,18 +229,6 @@ CREATE TABLE `ventas` (
   `id_cliente` int(11) NOT NULL,
   `id_usuario` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`id_venta`, `fecha_venta`, `total_pago`, `descuento`, `id_cliente`, `id_usuario`) VALUES
-(56, '2021-05-27', '3.75', 0, 123456789, 1),
-(57, '2021-05-27', '6.25', 0, 1234532, 1),
-(58, '2021-05-27', '1.25', 0, 1234532, 1),
-(59, '2021-05-27', '3.75', 0, 12344321, 1),
-(60, '2021-05-27', '1.25', 0, 12344321, 1),
-(61, '2021-05-27', '1.25', 0, 123456789, 1);
 
 --
 -- Índices para tablas volcadas
@@ -348,13 +311,13 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
-  MODIFY `id_detalle_v` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id_detalle_v` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT de la tabla `inventarios`
@@ -390,7 +353,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- Restricciones para tablas volcadas
