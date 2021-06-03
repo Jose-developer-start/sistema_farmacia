@@ -8,7 +8,7 @@ Tener instalado XAMPP(Window) O LAMPP(GNU/Linux)
 Lenguaje de programación PHP v7.2 y superior
 
 ### Ajustes 🔩
-El archivo .htaccess tiene que ser renombrado quedando: #.htaccess
+El archivo .htaccess tiene que ser renombrado quedando: .htaccess
 
 ### Tecnologias 🔩
 
